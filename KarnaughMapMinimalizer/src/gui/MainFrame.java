@@ -9,5 +9,9 @@ package gui;
  * @author syky
  */
 public class MainFrame extends BasicFrame{
+
+    MapButton but_0 =  new MapButton();
+    
+    
     
 }
