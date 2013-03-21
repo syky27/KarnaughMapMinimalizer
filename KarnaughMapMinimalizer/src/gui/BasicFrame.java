@@ -6,10 +6,14 @@ package gui;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -37,6 +41,7 @@ public class BasicFrame {
         JMenu about = new JMenu("About");
         JMenuItem exit = new JMenuItem("Exit");
         JMenuItem author = new JMenuItem("Author");
+        final JButton button = new JButton("1");
         
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,6 +65,57 @@ public class BasicFrame {
         }
         
         exit.addActionListener(new ExitAction());
+    
+        
+        // ---------------------TEST!!!!-------------------//
+        
+        button.addMouseListener(new MouseAdapter(){
+            boolean pressed;
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                button.getModel().setArmed(true);
+                button.getModel().setPressed(true);
+                pressed = true;
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                //if(isRightButtonPressed) {underlyingButton.getModel().setPressed(true));
+                button.getModel().setArmed(false);
+                button.getModel().setPressed(false);
+
+                if (pressed) {
+                    if (SwingUtilities.isRightMouseButton(e)) {
+                        button.setText("F");
+                    }
+                    else {
+                        button.setText("X");
+                    }
+                }
+                pressed = false;
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                pressed = false;
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                pressed = true;
+            }                    
+        });
+        frame.add(button);
+
+        
+        
+        
+        
+        
+        
+        
         
     }
 }
