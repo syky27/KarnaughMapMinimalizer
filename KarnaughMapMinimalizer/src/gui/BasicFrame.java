@@ -86,9 +86,11 @@ public class BasicFrame {
                 button.getModel().setPressed(false);
 
                 if (pressed) {
-                    if (SwingUtilities.isRightMouseButton(e)) {
-                        button.setText("F");
-                    }
+                    if (SwingUtilities.isLeftMouseButton(e) && !("1".equals(button.getText()))) {
+                        button.setText("1");
+                    }else if(SwingUtilities.isLeftMouseButton(e) && ("1".equals(button.getText()))){
+                        button.setText("0");
+                    } 
                     else {
                         button.setText("X");
                     }
