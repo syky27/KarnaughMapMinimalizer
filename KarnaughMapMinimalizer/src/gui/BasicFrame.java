@@ -16,15 +16,19 @@ import javax.swing.JMenuItem;
  * @author syky
  */
 public class BasicFrame {
- 
 
+    public BasicFrame() {
+        getBasicFrame();
+    }
+ 
+ 
 
     /**
      * @param args the command line arguments
      */
     
     
-    public void getBasic() {
+    public void getBasicFrame() {
         
         JFrame frame = new JFrame("Minimalizer");
         JMenuBar menubar = new JMenuBar();

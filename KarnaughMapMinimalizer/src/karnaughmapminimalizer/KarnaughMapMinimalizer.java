@@ -4,16 +4,23 @@
  */
 package karnaughmapminimalizer;
 
+import gui.BasicFrame;
+import gui.MainFrame;
+
 /**
  *
  * @author syky
  */
 public class KarnaughMapMinimalizer {
 
+
     /**
-     * @param args the command line arguments
+     *
+     * @param args
+     * there is no need for args I just do not know how to get rid of these....
      */
     public static void main(String[] args) {
-        System.out.println("test");
+        //BasicFrame frame = new BasicFrame();
+        MainFrame mainFrame = new MainFrame();
     }
 }
