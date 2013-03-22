@@ -69,8 +69,8 @@ public class BasicFrame {
 
     }
 
-    protected void assignButton(JButton button) {
-        this.frame.add(button);
+    protected void assignComponemtToFrame(JButton button) {
+        frame.add(button);
     }
 
     static class ExitAction implements ActionListener {
@@ -85,7 +85,7 @@ public class BasicFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            System.exit(1);
+            Author author = new Author();
         }
     }
 }

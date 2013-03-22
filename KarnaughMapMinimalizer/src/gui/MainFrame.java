@@ -7,19 +7,12 @@ public class MainFrame extends BasicFrame{
     MapButton but_0 =  new MapButton();
 
     public MainFrame() {
-        assignButton(but_0.button);
+        assignComponemtToFrame(but_0.button);
     }
     
     
-    
-
-   
-
-
-    
-    
-    protected void assignButton(JButton button) {
-        super.assignButton(button);
+    protected void assignComponemtToFrame(JButton button) {
+        super.assignComponemtToFrame(button);
     }
     
     
