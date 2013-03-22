@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 
 public class MainFrame extends BasicFrame{
     JPanel mapPanel = new JPanel();
-  
     MapButton but_0 =  new MapButton();
     MapButton but_1 =  new MapButton();
     MapButton but_2 =  new MapButton();
@@ -30,33 +29,42 @@ public class MainFrame extends BasicFrame{
     }
     
     
-    public void initGui(){
-        mapPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        mapPanel.setLayout(new GridLayout(4, 4, 5, 5));
-        
+    private  void initGui(){
+        mapPanel.setBorder(BorderFactory.createEmptyBorder(1,1));
+        mapPanel.setLayout(new GridLayout(1, 1));
+
         mapPanel.add(but_0.button);
-        mapPanel.add(but_1.button);
-        mapPanel.add(but_3.button);
-        mapPanel.add(but_2.button);
-        
-        mapPanel.add(but_4.button);
-        mapPanel.add(but_5.button);
-        mapPanel.add(but_7.button);
-        mapPanel.add(but_6.button);
-        
-        mapPanel.add(but_12.button);
-        mapPanel.add(but_13.button);
-        mapPanel.add(but_15.button);
-        mapPanel.add(but_14.button);
-        
-        mapPanel.add(but_8.button);
-        mapPanel.add(but_9.button);
-        mapPanel.add(but_11.button);
-        mapPanel.add(but_10.button);
-        
-        
-        
-        //but_0.button.setBounds(50, 50, 50, 50);
+//        mapPanel.add(but_4.button);
+//        mapPanel.add(but_12.button);
+//        mapPanel.add(but_8.button);
+//
+//
+//
+//        mapPanel.add(but_1.button);
+//        mapPanel.add(but_5.button);
+//        mapPanel.add(but_13.button);
+//        mapPanel.add(but_9.button);
+//
+//
+//
+//        mapPanel.add(but_3.button);
+//        mapPanel.add(but_7.button);
+//        mapPanel.add(but_15.button);
+//        mapPanel.add(but_11.button);
+//
+//
+//
+//        mapPanel.add(but_2.button);
+//
+//        mapPanel.add(but_6.button);
+//
+//        mapPanel.add(but_14.button);
+//
+//        mapPanel.add(but_10.button);
+
+
+
+        but_0.button.setBounds(50, 50, 50, 50);
         
         super.frame.add(mapPanel);
         
@@ -64,9 +72,9 @@ public class MainFrame extends BasicFrame{
     }
     
     
-    protected void assignComponemtToFrame(JButton button) {
-        super.assignComponemtToFrame(button);
-    }
+//    protected void assignComponemtToFrame(JButton button) {
+//        super.assignComponemtToFrame(button);
+//    }
 
     
     
