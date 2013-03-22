@@ -4,6 +4,8 @@
  */
 package gui;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author syky
@@ -11,6 +13,13 @@ package gui;
 public class MainFrame extends BasicFrame{
 
     MapButton but_0 =  new MapButton();
+    
+   
+
+
+    
+    
+    
     
     
     

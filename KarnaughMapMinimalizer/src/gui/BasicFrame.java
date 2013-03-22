@@ -20,29 +20,25 @@ import javax.swing.SwingUtilities;
  * @author syky
  */
 public class BasicFrame {
+    
+        protected JFrame frame = new JFrame("Minimalizer");
+        protected JMenuBar menubar = new JMenuBar();
+        protected JMenu file = new JMenu("File");
+        protected JMenu edit = new JMenu("Edit");
+        protected JMenu about = new JMenu("About");
+        protected JMenu fnc = new JMenu("Logic Functions...");
+        protected JMenuItem exit = new JMenuItem("Exit");
+        protected JMenuItem author = new JMenuItem("Author");
+        protected JMenuItem fnc3 = new JMenuItem("3 Functions");
+        protected JMenuItem fnc4 = new JMenuItem("4 Functions");
+        protected JMenuItem fnc5 = new JMenuItem("5 Functions");
+        protected JMenuItem fnc6 = new JMenuItem("May be continued...");
+        
+        protected MapButton x = new MapButton();
+        
+        protected final JButton button = new JButton("1");
 
     public BasicFrame() {
-        getBasicFrame();
-    }
- 
- 
-
-    /**
-     * @param args the command line arguments
-     */
-    
-    
-    public void getBasicFrame() {
-        
-        JFrame frame = new JFrame("Minimalizer");
-        JMenuBar menubar = new JMenuBar();
-        JMenu file = new JMenu("File");
-        JMenu edit = new JMenu("Edit");
-        JMenu about = new JMenu("About");
-        JMenuItem exit = new JMenuItem("Exit");
-        JMenuItem author = new JMenuItem("Author");
-        final JButton button = new JButton("1");
-        
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(640, 480);
@@ -53,22 +49,44 @@ public class BasicFrame {
         menubar.add(about);
         
         file.add(exit);
+        file.add(fnc);
+        fnc.add(fnc3);
+        fnc.add(fnc4);
+        fnc.add(fnc5);
+        fnc.add(fnc6);
         
+        about.add(author); 
+        frame.add(x.button);
+
         
-        about.add(author);
-        
-        class ExitAction implements ActionListener {
-            @Override
-             public void actionPerformed(ActionEvent e){
-                System.exit(0);
-            }
-        }
-        
-        exit.addActionListener(new ExitAction());
+    exit.addActionListener(new ExitAction());
+    author.addActionListener(new AuthorAction());
     
+    }
+    
+    public void assignButton(JButton button){
+        this.frame.add(button);
+    }
+    
+    
+    static class ExitAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(0);
+        }
+    }
+    
+    static class AuthorAction implements ActionListener{
+        @Override
+        public void actionPerformed(ActionEvent e){
+            System.exit(1);
+        }
+    }
+
         
-        // ---------------------TEST!!!!-------------------//
-        /*
+    
+
+    public void  getTestingButton() {
         button.addMouseListener(new MouseAdapter(){
             boolean pressed;
 
@@ -108,12 +126,12 @@ public class BasicFrame {
             public void mouseEntered(MouseEvent e) {
                 pressed = true;
             }                    
+        
         });
-        frame.add(button);
 
         
         
-*/        
+  
         
         
         

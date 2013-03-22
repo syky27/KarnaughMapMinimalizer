@@ -9,5 +9,11 @@ package gui;
  * @author syky
  */
 public class Author extends BasicFrame{
-    
+
+    public Author() {
+        System.exit(0);
+        
+    }
+
+   
 }
