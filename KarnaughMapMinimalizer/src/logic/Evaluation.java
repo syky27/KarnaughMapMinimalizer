@@ -10,5 +10,11 @@ public class Evaluation extends KarnaughMapMinimalizer{
     public Evaluation() {
         map = new boolean[SIZE][SIZE];
     }
+
+    public void setMap(int x, int y, boolean value) {
+        this.map[x][y] = value;
+    }
+    
+    
     
 }

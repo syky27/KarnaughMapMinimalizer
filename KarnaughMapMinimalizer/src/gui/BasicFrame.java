@@ -35,6 +35,7 @@ public class BasicFrame {
     protected JMenuItem fnc4 = new JMenuItem("4 Functions");
     protected JMenuItem fnc5 = new JMenuItem("5 Functions");
     protected JMenuItem fnc6 = new JMenuItem("May be continued...");
+    protected JMenuItem history = new JMenuItem("History");
     protected MapButton x = new MapButton();
     protected final JButton button = new JButton("1");
 
@@ -45,14 +46,14 @@ public class BasicFrame {
         frame.setResizable(false);
         frame.setJMenuBar(menubar);
         
-        
         menubar.add(file);
         menubar.add(edit);
         menubar.add(about);
 
-      
         file.add(fnc);
         file.add(exit);
+        
+        edit.add(history);
         
         fnc.add(fnc3);
         fnc.add(fnc4);
