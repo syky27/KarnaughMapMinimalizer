@@ -5,6 +5,7 @@
 package gui;
 
 
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -18,7 +19,9 @@ public class MapButton {
     JButton  button =  new JButton("0");
 
     public MapButton() {
-    
+        
+    Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),24 );
+    button.setFont(fontMapButton);
     button.addMouseListener(new MouseAdapter(){
             boolean pressed;
      
