@@ -55,13 +55,15 @@ public class Author extends BasicFrame {
         emailButton.addActionListener(new EmailAction());
         bottomPanel.add(emailButton);
         bottomPanel.add(twitterButton);
-        infoLabel.setBorder(border);
+        //infoLabel.setBorder(border);
         infoLabel.setPreferredSize(new Dimension(500,400));
         infoLabel.setHorizontalTextPosition(JLabel.CENTER);
         infoLabel.setVerticalTextPosition(JLabel.CENTER);
         
         super.frame.add(infoLabel);
         super.frame.add(bottomPanel, BorderLayout.SOUTH);
+        super.frame.setVisible(true);
+
        
     }
 

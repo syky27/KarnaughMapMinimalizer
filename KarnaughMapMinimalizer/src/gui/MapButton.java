@@ -20,7 +20,7 @@ public class MapButton {
 
     public MapButton() {
         
-    Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),24 );
+    Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),35 );
     button.setFont(fontMapButton);
     button.addMouseListener(new MouseAdapter(){
             boolean pressed;

@@ -1,14 +1,24 @@
 package gui;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.Image;
+import java.net.URL;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import test.NewJFrame;
 
 public class MainFrame extends BasicFrame {
-
+    JPanel topPanel =  new JPanel();
+    JPanel leftPanel =  new JPanel();
+    JPanel bottomPanel =  new JPanel();
+    JButton generateButton = new JButton("Generate");
+    
     JPanel mapPanel = new JPanel();
     MapButton but_0 = new MapButton();
     MapButton but_1 = new MapButton();
@@ -27,6 +37,10 @@ public class MainFrame extends BasicFrame {
     MapButton but_14 = new MapButton();
     MapButton but_15 = new MapButton();
 
+    
+    private Icon topPNG;
+    private Icon leftPNG;
+    
     public MainFrame() {
         initGui();
     }
@@ -55,18 +69,34 @@ public class MainFrame extends BasicFrame {
         mapPanel.add(but_10.button);
 
 
+        
+        URL topPicDest = this.getClass().getResource("/pic/vrchniPanel.png");
+        topPNG = new ImageIcon(topPicDest);
+        JLabel iconLabel = new JLabel(topPNG);
 
-//        but_0.button.setBounds(50, 50, 50, 50);
-
+        URL leftPicDest = this.getClass().getResource("/pic/leftPanel.png");
+        leftPNG = new ImageIcon(leftPicDest);
+        JLabel leftIconLabel = new JLabel(leftPNG);
+        
+        
+                
+        topPanel.add(iconLabel);
+        leftPanel.add(leftIconLabel);
+        
+        
+        bottomPanel.add(generateButton);
+        
+        
+        super.frame.add(leftPanel, BorderLayout.WEST);
+        super.frame.add(topPanel,BorderLayout.NORTH);
+        super.frame.add(bottomPanel, BorderLayout.SOUTH);
+        
         super.frame.add(mapPanel);
         super.frame.setVisible(true);
         super.frame.setLocationRelativeTo( null );
 
 
 
-        //assignComponemtToFrame(but_0.button);
+        
     }
-//    protected void assignComponemtToFrame(JButton button) {
-//        super.assignComponemtToFrame(button);
-//    }
 }
