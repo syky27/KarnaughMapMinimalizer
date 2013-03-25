@@ -15,7 +15,6 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
@@ -59,6 +58,7 @@ public class Author extends BasicFrame {
         infoLabel.setPreferredSize(new Dimension(500,400));
         infoLabel.setHorizontalTextPosition(JLabel.CENTER);
         infoLabel.setVerticalTextPosition(JLabel.CENTER);
+        
         
         super.frame.add(infoLabel);
         super.frame.add(bottomPanel, BorderLayout.SOUTH);

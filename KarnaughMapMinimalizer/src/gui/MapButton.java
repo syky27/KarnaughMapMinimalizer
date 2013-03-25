@@ -1,9 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
-
 
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -11,15 +6,10 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author syky
- */
 public class MapButton {
     JButton  button =  new JButton("0");
 
     public MapButton() {
-        
     Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),35 );
     button.setFont(fontMapButton);
     button.addMouseListener(new MouseAdapter(){
