@@ -19,6 +19,9 @@ import javax.swing.SwingUtilities;
  *
  * @author syky
  */
+
+
+
 public class BasicFrame {
 
     protected JFrame frame = new JFrame("Minimalizer");
@@ -39,12 +42,22 @@ public class BasicFrame {
     protected MapButton x = new MapButton();
     protected final JButton button = new JButton("1");
 
+    
+    public void Destructor() throws Throwable{
+        this.frame.setVisible(false);
+        this.finalize();
+    }
+    
     public BasicFrame() {
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+     
+     
         frame.setSize(640, 480);
         frame.setResizable(false);
         frame.setJMenuBar(menubar);
+        frame.setLocationRelativeTo( null );
         
         menubar.add(file);
         menubar.add(edit);
@@ -63,10 +76,14 @@ public class BasicFrame {
         about.add(author);
         about.add(license);
         //frame.add(x.button);
+       
 
         //listerners for menu button actions
         exit.addActionListener(new ExitAction());
+        
         author.addActionListener(new AuthorAction());
+        
+        fnc4.addActionListener(new Function4Action());
 
     }
 
@@ -89,4 +106,18 @@ public class BasicFrame {
             Author author = new Author();
         }
     }
+    
+
+    
+    static class Function4Action implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e){
+           
+
+           MainFrame mainframe = new MainFrame();
+            
+        }
+    }
 }
+
+
