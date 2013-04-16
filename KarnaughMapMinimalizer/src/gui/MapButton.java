@@ -24,7 +24,6 @@ public class MapButton {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                //if(isRightButtonPressed) {underlyingButton.getModel().setPressed(true));
                 button.getModel().setArmed(false);
                 button.getModel().setPressed(false);
 
@@ -52,7 +51,6 @@ public class MapButton {
                 pressed = true;
             }                    
         });
-        //frame.add(button);
     
     
     }

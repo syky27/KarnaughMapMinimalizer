@@ -103,7 +103,7 @@ public class BasicFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            Author author = new Author();
+ //           Author author = new Author();
             frame.add(author);
             
         }
@@ -116,10 +116,10 @@ public class BasicFrame {
         public void actionPerformed(ActionEvent e){
            
            
-           MainFrame mainframe = new MainFrame();
+    //       MainFrame mainframe = new MainFrame();
            
            
-           frame.add(mainframe);
+       //    frame.add(mainframe);
             frame.setVisible(true);
             frame.setSize(640, 500);
             

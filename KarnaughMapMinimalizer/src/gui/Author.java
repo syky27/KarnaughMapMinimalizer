@@ -30,6 +30,7 @@ import javax.swing.border.Border;
  */
 public class Author extends JInternalFrame {
 
+    static final int xPosition = 30, yPosition = 30;
     JButton emailButton = new JButton("Email me");
     JButton twitterButton = new JButton("Follow me");
     JPanel bottomPanel = new JPanel();
@@ -45,12 +46,20 @@ public class Author extends JInternalFrame {
     
 
     
-    public Author() {
-        setFrame();
+    public Author(int CounterJInternalFrame) {
+        super("IFrame #" + CounterJInternalFrame ,  
+                            false, // resizable
+                            true, // closable
+                            false, // maximizable
+                            true);// iconifiable
+                            setSize(640, 480);
+			// Set the window's location.
+	setLocation(xPosition * CounterJInternalFrame , yPosition * CounterJInternalFrame );
+        initAuthor();
 
     }
 
-    protected void setFrame() {
+    protected void initAuthor() {
         twitterButton.addActionListener(new TwitterAction());
         emailButton.addActionListener(new EmailAction());
         bottomPanel.add(emailButton);

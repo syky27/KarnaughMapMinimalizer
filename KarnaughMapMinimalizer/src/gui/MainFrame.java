@@ -3,23 +3,13 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.beans.PropertyVetoException;
 import java.net.URL;
-import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.event.InternalFrameEvent;
-import test.NewJFrame;
 
 public class MainFrame extends JInternalFrame {
     JPanel topPanel =  new JPanel();
@@ -61,18 +51,12 @@ public class MainFrame extends JInternalFrame {
                             setSize(640, 480);
 			// Set the window's location.
 	setLocation(xPosition * CounterJInternalFrame , yPosition * CounterJInternalFrame );
-        
-        initGui();
-        
-        
-        
-        
+        initMap();
     }
 
    
     
-    private void initGui() {
-        //mapPanel.setBorder(BorderFactory.createEmptyBorder(1,1));
+    private void initMap() {
          int x = 200;
          int y = 200;
         mapPanel.setLayout(new GridLayout(4, 4, 4, 4));

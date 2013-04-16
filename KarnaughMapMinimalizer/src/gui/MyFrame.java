@@ -60,7 +60,7 @@ public class MyFrame extends JFrame{
         jdpDesktop.setDragMode(2000000000);
         jdpDesktop.putClientProperty("JDesktopPane.dragMode", "outline");
 
-        createFrame(); // Create first window
+        drawFourFunction(); // Create first window
         DrawMenu();
         repaint();
         
@@ -70,30 +70,6 @@ public class MyFrame extends JFrame{
     }
 
     
-    protected void createFrame() {
-                CounterJInternalFrame++;
-		MainFrame frame = new MainFrame(CounterJInternalFrame);
-		frame.setVisible(true);
-		jdpDesktop.add(frame);
-		try {
-			frame.setSelected(true);
-		} catch (java.beans.PropertyVetoException e) {
-		}
-	}
-    
-   
-    
-
-
-    public void CleanMyFrame(){
-        removeAll();
-    }
-
-    public void Destructor() throws Throwable{
-        this.setVisible(false);
-        this.finalize();
-
-    }
 
     public void DrawMenu() {
         setVisible(true);
@@ -120,21 +96,28 @@ public class MyFrame extends JFrame{
     }
 
     
-    protected JMenuBar createMenuBar() {
-		JMenuBar menuBar = new JMenuBar();
-		JMenu menu = new JMenu("Frame");
-		menu.setMnemonic(KeyEvent.VK_N);
-		JMenuItem menuItem = new JMenuItem("New IFrame");
-		menuItem.setMnemonic(KeyEvent.VK_N);
-		menuItem.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-				createFrame();
-			}
-		});
-		menu.add(menuItem);
-		menuBar.add(menu);
-		return menuBar;
+     protected void drawFourFunction() {
+                CounterJInternalFrame++;
+		MainFrame frame = new MainFrame(CounterJInternalFrame);
+		frame.setVisible(true);
+		jdpDesktop.add(frame);
+		try {
+			frame.setSelected(true);
+		} catch (java.beans.PropertyVetoException e) {
+		}
+	}
+     
+     
+     
+      protected void drawAuthor() {
+                CounterJInternalFrame++;
+		Author author = new Author(CounterJInternalFrame);
+		author.setVisible(true);
+		jdpDesktop.add(author);
+		try {
+			author.setSelected(true);
+		} catch (java.beans.PropertyVetoException e) {
+		}
 	}
     
     
@@ -153,12 +136,7 @@ public class MyFrame extends JFrame{
      class AuthorAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-
-            //Author a = new Author();
-            Test a = new Test();
-
-            add(a);
-            setVisible(true);
+            drawAuthor();
         }
     }
 
@@ -167,10 +145,9 @@ public class MyFrame extends JFrame{
      class Function4Action implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e){
-            CounterJInternalFrame++;
             
             
-            createFrame();
+            drawFourFunction();
 
 //            MainFrame mainframe = new MainFrame();
 //            setVisible(true);
