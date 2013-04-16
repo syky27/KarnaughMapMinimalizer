@@ -4,20 +4,26 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.beans.PropertyVetoException;
 import java.net.URL;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.event.InternalFrameEvent;
 import test.NewJFrame;
 
-public class MainFrame extends BasicFrame {
+public class MainFrame extends JInternalFrame {
     JPanel topPanel =  new JPanel();
     JPanel leftPanel =  new JPanel();
     JPanel bottomPanel =  new JPanel();
     JButton generateButton = new JButton("Generate");
+          
+
     
     JPanel mapPanel = new JPanel();
     MapButton but_0 = new MapButton();
@@ -37,14 +43,24 @@ public class MainFrame extends BasicFrame {
     MapButton but_14 = new MapButton();
     MapButton but_15 = new MapButton();
 
-    
+        static final int xPosition = 30, yPosition = 30;
+
     private Icon topPNG;
     private Icon leftPNG;
     
     public MainFrame() {
+        super("IFrame #" ,  false, // resizable
+                            true, // closable
+                            false, // maximizable
+                            true);// iconifiable
+                         setSize(640, 480);
+			// Set the window's location.
+			setLocation(xPosition + 30 , yPosition + 30 );
         initGui();
     }
 
+   
+    
     private void initGui() {
         //mapPanel.setBorder(BorderFactory.createEmptyBorder(1,1));
          int x = 200;
@@ -79,7 +95,10 @@ public class MainFrame extends BasicFrame {
         JLabel leftIconLabel = new JLabel(leftPNG);
         
         
-                
+        setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
+        
+       
+
         topPanel.add(iconLabel);
         leftPanel.add(leftIconLabel);
         
@@ -87,16 +106,28 @@ public class MainFrame extends BasicFrame {
         bottomPanel.add(generateButton);
         
         
-        super.frame.add(leftPanel, BorderLayout.WEST);
-        super.frame.add(topPanel,BorderLayout.NORTH);
-        super.frame.add(bottomPanel, BorderLayout.SOUTH);
+        add(leftPanel, BorderLayout.WEST);
+        add(topPanel,BorderLayout.NORTH);
+        add(bottomPanel, BorderLayout.SOUTH);
         
-        super.frame.add(mapPanel);
-        super.frame.setVisible(true);
-        super.frame.setLocationRelativeTo( null );
-
-
+        add(mapPanel);
+        setVisible(true);
+        //setLocationRelativeTo( null );
+        
+        
+       
 
         
     }
+   void internalFrameClosed(InternalFrameEvent e){
+       this.setVisible(false); 
+       this.dispose();
+     
+        
+        
+         }
+
+
 }
+
+

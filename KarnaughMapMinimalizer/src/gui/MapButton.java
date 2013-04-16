@@ -10,7 +10,7 @@ public class MapButton {
     JButton  button =  new JButton("0");
 
     public MapButton() {
-    Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),35 );
+    Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),30 );
     button.setFont(fontMapButton);
     button.addMouseListener(new MouseAdapter(){
             boolean pressed;

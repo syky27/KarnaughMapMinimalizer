@@ -27,7 +27,7 @@ import javax.swing.border.Border;
  *
  * @author syky
  */
-public class Author extends BasicFrame {
+public class Author extends JPanel {
 
     JButton emailButton = new JButton("Email me");
     JButton twitterButton = new JButton("Follow me");
@@ -60,9 +60,9 @@ public class Author extends BasicFrame {
         infoLabel.setVerticalTextPosition(JLabel.CENTER);
         
         
-        super.frame.add(infoLabel);
-        super.frame.add(bottomPanel, BorderLayout.SOUTH);
-        super.frame.setVisible(true);
+        add(infoLabel);
+        add(bottomPanel, BorderLayout.SOUTH);
+        setVisible(true);
 
        
     }
