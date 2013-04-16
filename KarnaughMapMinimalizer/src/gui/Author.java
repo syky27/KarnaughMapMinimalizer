@@ -19,6 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -27,7 +28,7 @@ import javax.swing.border.Border;
  *
  * @author syky
  */
-public class Author extends JPanel {
+public class Author extends JInternalFrame {
 
     JButton emailButton = new JButton("Email me");
     JButton twitterButton = new JButton("Follow me");

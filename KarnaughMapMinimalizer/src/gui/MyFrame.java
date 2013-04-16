@@ -14,7 +14,7 @@ import java.awt.*;
 public class MyFrame extends JFrame{
 
     JDesktopPane jdpDesktop;
-    static int openFrameCount = 0;
+    static int CounterJInternalFrame = 0;
     
     private JMenuBar menubar = new JMenuBar();
     private JMenu file = new JMenu("File");
@@ -50,32 +50,30 @@ public class MyFrame extends JFrame{
             }
         });
 
-        // Create and Set up the GUI.
+       
+        //Create and Set up the GUI.
         jdpDesktop = new JDesktopPane();
         // A specialized layered pane to be used with JInternalFrames
-        createFrame(); // Create first window
         setContentPane(jdpDesktop);
         //setJMenuBar(createMenuBar());
         // Make dragging faster by setting drag mode to Outline
         jdpDesktop.setDragMode(2000000000);
         jdpDesktop.putClientProperty("JDesktopPane.dragMode", "outline");
 
-
+        createFrame(); // Create first window
         DrawMenu();
         repaint();
         
-        
+	//setJMenuBar(createMenuBar());
         //menubar.setMnemonic(KeyEvent.VK_N);
-		//menuItem.setMnemonic(KeyEvent.VK_N);
-
-
+	//menuItem.setMnemonic(KeyEvent.VK_N);
     }
 
     
     protected void createFrame() {
-		MainFrame frame = new MainFrame();
+                CounterJInternalFrame++;
+		MainFrame frame = new MainFrame(CounterJInternalFrame);
 		frame.setVisible(true);
-		// Every JInternalFrame must be added to content pane using JDesktopPane
 		jdpDesktop.add(frame);
 		try {
 			frame.setSelected(true);
@@ -85,10 +83,6 @@ public class MyFrame extends JFrame{
     
    
     
-
-
-
-
 
 
     public void CleanMyFrame(){
@@ -125,6 +119,26 @@ public class MyFrame extends JFrame{
         fnc4.addActionListener(new Function4Action());
     }
 
+    
+    protected JMenuBar createMenuBar() {
+		JMenuBar menuBar = new JMenuBar();
+		JMenu menu = new JMenu("Frame");
+		menu.setMnemonic(KeyEvent.VK_N);
+		JMenuItem menuItem = new JMenuItem("New IFrame");
+		menuItem.setMnemonic(KeyEvent.VK_N);
+		menuItem.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+				createFrame();
+			}
+		});
+		menu.add(menuItem);
+		menuBar.add(menu);
+		return menuBar;
+	}
+    
+    
+    
     public void assignComponemtToFrame(JComponent comp) {
         this.add(comp);
     }
@@ -153,10 +167,18 @@ public class MyFrame extends JFrame{
      class Function4Action implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e){
+            CounterJInternalFrame++;
+            
+            
+            createFrame();
 
-            MainFrame mainframe = new MainFrame();
-            setVisible(true);
-            setSize(640, 480);
+//            MainFrame mainframe = new MainFrame();
+//            setVisible(true);
+//            setSize(640, 480);
         }
     }
+     
+    
+     
+     
 }

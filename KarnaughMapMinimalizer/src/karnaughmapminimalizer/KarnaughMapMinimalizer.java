@@ -10,6 +10,7 @@ public class KarnaughMapMinimalizer {
         //BasicFrame frame = new BasicFrame();
         
         MyFrame fr = new MyFrame();
+        fr.setVisible(true);
 
     }
 }

@@ -4,6 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.beans.PropertyVetoException;
 import java.net.URL;
 import javax.swing.BorderFactory;
@@ -43,20 +47,26 @@ public class MainFrame extends JInternalFrame {
     MapButton but_14 = new MapButton();
     MapButton but_15 = new MapButton();
 
-        static final int xPosition = 30, yPosition = 30;
+    static final int xPosition = 30, yPosition = 30;
 
     private Icon topPNG;
     private Icon leftPNG;
     
-    public MainFrame() {
-        super("IFrame #" ,  false, // resizable
+    public MainFrame(int CounterJInternalFrame) {
+        super("IFrame #" + CounterJInternalFrame ,  
+                            false, // resizable
                             true, // closable
                             false, // maximizable
                             true);// iconifiable
-                         setSize(640, 480);
+                            setSize(640, 480);
 			// Set the window's location.
-			setLocation(xPosition + 30 , yPosition + 30 );
+	setLocation(xPosition * CounterJInternalFrame , yPosition * CounterJInternalFrame );
+        
         initGui();
+        
+        
+        
+        
     }
 
    
@@ -85,49 +95,27 @@ public class MainFrame extends JInternalFrame {
         mapPanel.add(but_10.button);
 
 
-        
+        //top picture
         URL topPicDest = this.getClass().getResource("/pic/vrchniPanel.png");
         topPNG = new ImageIcon(topPicDest);
         JLabel iconLabel = new JLabel(topPNG);
+        topPanel.add(iconLabel);
+        add(topPanel,BorderLayout.NORTH);
 
+        //left picture
         URL leftPicDest = this.getClass().getResource("/pic/leftPanel.png");
         leftPNG = new ImageIcon(leftPicDest);
         JLabel leftIconLabel = new JLabel(leftPNG);
-        
-        
-        setDefaultCloseOperation(JInternalFrame.EXIT_ON_CLOSE);
-        
-       
-
-        topPanel.add(iconLabel);
         leftPanel.add(leftIconLabel);
-        
+        add(leftPanel, BorderLayout.WEST);
         
         bottomPanel.add(generateButton);
-        
-        
-        add(leftPanel, BorderLayout.WEST);
-        add(topPanel,BorderLayout.NORTH);
         add(bottomPanel, BorderLayout.SOUTH);
         
         add(mapPanel);
         setVisible(true);
-        //setLocationRelativeTo( null );
-        
-        
-       
-
-        
     }
-   void internalFrameClosed(InternalFrameEvent e){
-       this.setVisible(false); 
-       this.dispose();
-     
-        
-        
-         }
-
-
+    
 }
 
 
