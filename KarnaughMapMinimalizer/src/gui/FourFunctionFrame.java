@@ -3,21 +3,34 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.URL;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+import logic.FourFunction;
 
-public class MainFrame extends JInternalFrame {
+public class FourFunctionFrame extends JInternalFrame {
+    
+    
+    
     JPanel topPanel =  new JPanel();
     JPanel leftPanel =  new JPanel();
     JPanel bottomPanel =  new JPanel();
-    JButton generateButton = new JButton("Generate");
-          
-
+    JButton generateButtonBOOL = new JButton("Generate Boolean Algebra");
+    JButton generateButtonVHDL = new JButton("Generate VHDL");
+    
+    //MySpecialGenerateButton generateButton = new MySpecialGenerateButton();
+    
+    
     
     JPanel mapPanel = new JPanel();
     MapButton but_0 = new MapButton();
@@ -42,7 +55,7 @@ public class MainFrame extends JInternalFrame {
     private Icon topPNG;
     private Icon leftPNG;
     
-    public MainFrame(int CounterJInternalFrame) {
+    public FourFunctionFrame(int CounterJInternalFrame) {
         super("IFrame #" + CounterJInternalFrame ,  
                             false, // resizable
                             true, // closable
@@ -93,13 +106,55 @@ public class MainFrame extends JInternalFrame {
         leftPanel.add(leftIconLabel);
         add(leftPanel, BorderLayout.WEST);
         
-        bottomPanel.add(generateButton);
+        
+        generateButtonVHDL.addActionListener(new GenerateVHDL());
+        
+        bottomPanel.add(generateButtonBOOL);
+        bottomPanel.add(generateButtonVHDL);
         add(bottomPanel, BorderLayout.SOUTH);
         
         add(mapPanel);
         setVisible(true);
-    }
+           
+            
+};
     
+    
+   class GenerateVHDL implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+        FourFunction ev = new FourFunction( Integer.parseInt(but_0.button.getText()),
+                                            Integer.parseInt(but_1.button.getText()),
+                                            Integer.parseInt(but_2.button.getText()),
+                                            Integer.parseInt(but_3.button.getText()),
+                                            Integer.parseInt(but_4.button.getText()),
+                                            Integer.parseInt(but_5.button.getText()),
+                                            Integer.parseInt(but_6.button.getText()),
+                                            Integer.parseInt(but_7.button.getText()),
+                                            Integer.parseInt(but_8.button.getText()),
+                                            Integer.parseInt(but_9.button.getText()),
+                                            Integer.parseInt(but_10.button.getText()),
+                                            Integer.parseInt(but_11.button.getText()),
+                                            Integer.parseInt(but_12.button.getText()),
+                                            Integer.parseInt(but_13.button.getText()),
+                                            Integer.parseInt(but_14.button.getText()),
+                                            Integer.parseInt(but_15.button.getText()));
+            
+        
+        JFrame s = ev.getResult();
+        
+        
+        
+        
+       
+        }
+    } 
+    
+    
+        
 }
+    
+
 
 

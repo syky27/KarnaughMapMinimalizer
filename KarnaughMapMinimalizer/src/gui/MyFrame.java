@@ -11,9 +11,9 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 import java.awt.*;
 
-public class MyFrame extends JFrame{
+public class  MyFrame extends JFrame{
 
-    JDesktopPane jdpDesktop;
+    public JDesktopPane jdpDesktop;
     static int CounterJInternalFrame = 0;
     
     private JMenuBar menubar = new JMenuBar();
@@ -29,6 +29,7 @@ public class MyFrame extends JFrame{
     private JMenuItem fnc5 = new JMenuItem("5 Functions");
     private JMenuItem fnc6 = new JMenuItem("May be continued...");
     private JMenuItem history = new JMenuItem("History");
+    private JMenuItem notes = new JMenuItem("Notes...");
     		
 		
     
@@ -79,7 +80,10 @@ public class MyFrame extends JFrame{
         setLocationRelativeTo( null );
         menubar.add(file);
         menubar.add(edit);
+        //menubar.add(notes);
         menubar.add(about);
+        
+        
         file.add(fnc);
         file.add(exit);
         edit.add(history);
@@ -98,7 +102,7 @@ public class MyFrame extends JFrame{
     
      protected void drawFourFunction() {
                 CounterJInternalFrame++;
-		MainFrame frame = new MainFrame(CounterJInternalFrame);
+		FourFunctionFrame frame = new FourFunctionFrame(CounterJInternalFrame);
 		frame.setVisible(true);
 		jdpDesktop.add(frame);
 		try {
@@ -139,23 +143,21 @@ public class MyFrame extends JFrame{
             drawAuthor();
         }
     }
+     
+   
+    
 
 
 
      class Function4Action implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e){
-            
-            
             drawFourFunction();
 
-//            MainFrame mainframe = new MainFrame();
-//            setVisible(true);
-//            setSize(640, 480);
         }
     }
      
     
      
-     
-}
+} 
+

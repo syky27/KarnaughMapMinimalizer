@@ -7,13 +7,13 @@ import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
 public class MapButton {
-    JButton  button =  new JButton("0");
+    public JButton  button =  new JButton("0");
 
     public MapButton() {
     Font fontMapButton = new Font(button.getFont().getName(), button.getFont().getStyle(),30 );
     button.setFont(fontMapButton);
     button.addMouseListener(new MouseAdapter(){
-            boolean pressed;
+            public boolean pressed;
      
             @Override
             public void mousePressed(MouseEvent e) {

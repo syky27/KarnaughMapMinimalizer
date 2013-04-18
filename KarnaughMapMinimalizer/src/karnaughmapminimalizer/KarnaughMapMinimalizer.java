@@ -1,7 +1,7 @@
 package karnaughmapminimalizer;
 
 import gui.BasicFrame;
-import gui.MainFrame;
+import gui.FourFunctionFrame;
 import gui.MyFrame;
 
 public class KarnaughMapMinimalizer {

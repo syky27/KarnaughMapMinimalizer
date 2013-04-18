@@ -1,5 +1,10 @@
 package logic;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import sun.net.www.content.image.jpeg;
+
 public class FourFunction extends Evaluation{
 
      public FourFunction(int f_0, int f_1, int f_2, int f_3, int f_4, int f_5, int f_6, int f_7, int f_8, int f_9, int f_10, int f_11, int f_12, int f_13, int f_14, int f_15) {
@@ -21,7 +26,27 @@ public class FourFunction extends Evaluation{
         super.matrix.put("14", f_14);
         super.matrix.put("15", f_15);
         
+        
     
     }
+     
+     
     
+     
+    
+     
+    
+
+ public JFrame getResult(){
+           JFrame result = new JFrame("Result");
+           result.setSize(640, 480);
+           result.setVisible(true);
+           
+           JButton j = new JButton("pica");
+           result.add(j);
+           
+           return result;
+     }
+ 
+ 
 }

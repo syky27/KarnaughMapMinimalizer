@@ -52,7 +52,7 @@ public class Author extends JInternalFrame {
                             true, // closable
                             false, // maximizable
                             true);// iconifiable
-                            setSize(640, 480);
+                            setSize(400, 350);
 			// Set the window's location.
 	setLocation(xPosition * CounterJInternalFrame , yPosition * CounterJInternalFrame );
         initAuthor();
