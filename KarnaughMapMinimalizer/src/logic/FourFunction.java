@@ -3,7 +3,7 @@ package logic;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import sun.net.www.content.image.jpeg;
+//import sun.net.www.content.image.jpeg;
 
 public class FourFunction extends Evaluation{
 
@@ -42,7 +42,11 @@ public class FourFunction extends Evaluation{
            result.setSize(640, 480);
            result.setVisible(true);
            
-           JButton j = new JButton("pica");
+           int x;
+           x =  super.matrix.get(1);
+           
+           
+           JButton j = new JButton(Integer.toString(x));
            result.add(j);
            
            return result;

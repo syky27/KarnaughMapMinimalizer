@@ -1,4 +1,4 @@
 KarnaughMapMinimalizer
 ======================
 
-Just to make hardware engineers easier life :)
+Just to make hardware engineers life easier :)

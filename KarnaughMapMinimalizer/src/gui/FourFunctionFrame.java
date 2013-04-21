@@ -74,23 +74,38 @@ public class FourFunctionFrame extends JInternalFrame {
          int y = 200;
         mapPanel.setLayout(new GridLayout(4, 4, 4, 4));
         mapPanel.setSize(new Dimension(200, 200));
+        
         mapPanel.add(but_0.button);
-        mapPanel.add(but_4.button);
-        mapPanel.add(but_12.button);
-        mapPanel.add(but_8.button);
         mapPanel.add(but_1.button);
-        mapPanel.add(but_5.button);
-        mapPanel.add(but_13.button);
-        mapPanel.add(but_9.button);
         mapPanel.add(but_3.button);
-        mapPanel.add(but_7.button);
-        mapPanel.add(but_15.button);
-        mapPanel.add(but_11.button);
         mapPanel.add(but_2.button);
-        mapPanel.add(but_6.button);
-        mapPanel.add(but_14.button);
-        mapPanel.add(but_10.button);
 
+        
+        
+        mapPanel.add(but_4.button);
+        mapPanel.add(but_5.button);
+        mapPanel.add(but_7.button);
+        mapPanel.add(but_6.button);
+        
+        
+        mapPanel.add(but_12.button);
+        mapPanel.add(but_13.button);
+        mapPanel.add(but_15.button);
+        mapPanel.add(but_14.button);
+        
+        mapPanel.add(but_8.button);
+        mapPanel.add(but_9.button);
+        mapPanel.add(but_11.button);
+        mapPanel.add(but_10.button);
+        
+        
+
+        
+        
+        
+        
+        
+        
 
         //top picture
         URL topPicDest = this.getClass().getResource("/pic/vrchniPanel.png");
