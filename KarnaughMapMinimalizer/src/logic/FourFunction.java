@@ -37,16 +37,14 @@ public class FourFunction extends Evaluation{
      
     
 
- public JFrame getResult(){
-           JFrame result = new JFrame("Result");
+ public JInternalFrame getResult(){
+           JInternalFrame result = new JInternalFrame("Result");
            result.setSize(640, 480);
            result.setVisible(true);
            
-           int x;
-           x =  super.matrix.get(1);
            
            
-           JButton j = new JButton(Integer.toString(x));
+           JButton j = new JButton("PICA");
            result.add(j);
            
            return result;

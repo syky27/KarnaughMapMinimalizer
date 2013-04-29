@@ -1,6 +1,9 @@
 package gui;
 
+import karnaughmapminimalizer.KarnaughMapMinimalizer;
+
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -101,11 +104,6 @@ public class FourFunctionFrame extends JInternalFrame {
         
 
         
-        
-        
-        
-        
-        
 
         //top picture
         URL topPicDest = this.getClass().getResource("/pic/vrchniPanel.png");
@@ -130,9 +128,11 @@ public class FourFunctionFrame extends JInternalFrame {
         
         add(mapPanel);
         setVisible(true);
-           
-            
-};
+ 
+ 
+    
+    }
+ 
     
     
    class GenerateVHDL implements ActionListener {
@@ -157,18 +157,25 @@ public class FourFunctionFrame extends JInternalFrame {
                                             Integer.parseInt(but_15.button.getText()));
             
         
-        JFrame s = ev.getResult();
+        
+        
+        
+        JInternalFrame s = ev.getResult();
+        //gui.MyFrame.jdpDesktop.add(s);
+        gui.MyFrame.addJIn(s);
+        
         
         
         
         
        
         }
-    } 
+    }
+}
     
     
         
-}
+
     
 
 

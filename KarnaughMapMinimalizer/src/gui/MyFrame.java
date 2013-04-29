@@ -13,7 +13,7 @@ import java.awt.*;
 
 public class  MyFrame extends JFrame{
 
-    public JDesktopPane jdpDesktop;
+    static JDesktopPane jdpDesktop;
     static int CounterJInternalFrame = 0;
     
     private JMenuBar menubar = new JMenuBar();
@@ -98,6 +98,10 @@ public class  MyFrame extends JFrame{
         author.addActionListener(new AuthorAction());
         fnc4.addActionListener(new Function4Action());
     }
+    
+    public static void addJIn(JInternalFrame f){
+        jdpDesktop.add(f);
+    }
 
     
      protected void drawFourFunction() {
@@ -145,10 +149,6 @@ public class  MyFrame extends JFrame{
     }
      
    
-    
-
-
-
      class Function4Action implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e){
