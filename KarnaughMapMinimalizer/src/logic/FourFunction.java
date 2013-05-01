@@ -39,7 +39,11 @@ public class FourFunction extends Evaluation{
 
  public JInternalFrame getResult(){
            JInternalFrame result = new JInternalFrame("Result");
-           result.setSize(640, 480);
+           
+           result.setClosable(true);
+           result.setIconifiable(true);
+           
+           result.setSize(300, 100);
            result.setVisible(true);
            
            

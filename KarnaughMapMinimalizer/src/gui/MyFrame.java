@@ -1,4 +1,5 @@
 package gui;
+import FourLogic.Kpanel;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -106,11 +107,16 @@ public class  MyFrame extends JFrame{
     
      protected void drawFourFunction() {
                 CounterJInternalFrame++;
-		FourFunctionFrame frame = new FourFunctionFrame(CounterJInternalFrame);
-		frame.setVisible(true);
-		jdpDesktop.add(frame);
+                
+                      Kpanel ui = new Kpanel();
+
+		//FourFunctionFrame frame = new FourFunctionFrame(CounterJInternalFrame);
+		//frame.setVisible(true);
+                      
+                      ui.setVisible(true);
+		jdpDesktop.add(ui);
 		try {
-			frame.setSelected(true);
+			ui.setSelected(true);
 		} catch (java.beans.PropertyVetoException e) {
 		}
 	}
