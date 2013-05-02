@@ -56,6 +56,11 @@ public class MapButton {
     }
     
     
+    public String getText(){
+        return button.getText();
+    }
+    
+    
     
     
     

@@ -1,5 +1,5 @@
 package gui;
-import FourLogic.Kpanel;
+import FourLogic.FourLogicFrame;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,7 +15,7 @@ import java.awt.*;
 public class  MyFrame extends JFrame{
 
     static JDesktopPane jdpDesktop;
-    static int CounterJInternalFrame = 0;
+    public static int CounterJInternalFrame = 0;
     
     private JMenuBar menubar = new JMenuBar();
     private JMenu file = new JMenu("File");
@@ -108,7 +108,7 @@ public class  MyFrame extends JFrame{
      protected void drawFourFunction() {
                 CounterJInternalFrame++;
                 
-                      Kpanel ui = new Kpanel();
+                FourLogicFrame ui = new FourLogicFrame(CounterJInternalFrame);
 
 		//FourFunctionFrame frame = new FourFunctionFrame(CounterJInternalFrame);
 		//frame.setVisible(true);

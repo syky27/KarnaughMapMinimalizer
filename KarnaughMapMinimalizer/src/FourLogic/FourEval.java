@@ -9,13 +9,13 @@ package FourLogic;
  *
  * @author dave
  */
-public class QM extends qmOperations{
+public class FourEval extends FourEvalOperations{
     public int product[];
     public int nvar;
-    public QM next;
+    public FourEval next;
     public int used;
 
-    public QM(){
+    public FourEval(){
     int dproduct[] = {-1,-1,-1,-1};
     this.product = dproduct;
     nvar = 4;

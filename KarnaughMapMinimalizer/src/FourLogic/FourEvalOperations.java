@@ -12,10 +12,10 @@ import java.util.ArrayList;
  *
  * @author dave
  */
-public class qmOperations {
+public class FourEvalOperations {
     
-    public void additem(QM list,int product[]){
-        QM elem = new QM();
+    public void additem(FourEval list,int product[]){
+        FourEval elem = new FourEval();
         while(list.next != null) list = list.next;
         elem.next=list.next;
         elem.product = product;
@@ -31,7 +31,7 @@ public class qmOperations {
         return true;
     }
 
-    public boolean complementary(QM item1,QM item2){
+    public boolean complementary(FourEval item1,FourEval item2){
         int sum,i;
         for(i = sum = 0 ; i < item1.nvar; i++){
             if(item1.product[i] != item2.product[i])
@@ -42,7 +42,7 @@ public class qmOperations {
     }
 
    
-    public void deleteitem(QM list,QM item){
+    public void deleteitem(FourEval list,FourEval item){
         while(list.next != item){
             list = list.next;
         }
@@ -52,8 +52,8 @@ public class qmOperations {
         list.next = null;
     }
 
-    public void Qrec(ArrayList<QM> set,int index){
-        QM item1,item2,trav;
+    public void Qrec(ArrayList<FourEval> set,int index){
+        FourEval item1,item2,trav;
         boolean exist;
         int[] prod;
         int j,i;
@@ -95,13 +95,13 @@ public class qmOperations {
         }
         Qrec(set, index-1);
     }
-    public String CollectVar(ArrayList<QM> set){
+    public String CollectVar(ArrayList<FourEval> set){
     String var[] = { "A","B","C","D","\0"};
-    QM trail = new QM();
+    FourEval trail = new FourEval();
     String simplified_bool = new String(" ");
       for(int i = 0; i < 3 ; i++)
       {
-            for(QM trav = set.get(i).next; trav != null; trav = trav.next){
+            for(FourEval trav = set.get(i).next; trav != null; trav = trav.next){
                 trail = trav;
                 if(trav.product[0] != -1)
                     if(trav.product[0] == 1)
