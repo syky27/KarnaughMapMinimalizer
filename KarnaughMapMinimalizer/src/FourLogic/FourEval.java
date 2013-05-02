@@ -1,13 +1,8 @@
 package FourLogic;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author dave
+ * @author syky
  */
 public class FourEval extends FourEvalOperations{
     public int product[];
