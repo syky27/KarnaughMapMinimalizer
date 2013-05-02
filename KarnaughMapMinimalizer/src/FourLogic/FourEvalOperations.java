@@ -98,6 +98,7 @@ public class FourEvalOperations {
     public String CollectVar(ArrayList<FourEval> set){
     String var[] = { "A","B","C","D","\0"};
     FourEval trail = new FourEval();
+    
     String simplified_bool = new String(" ");
       for(int i = 0; i < 3 ; i++)
       {
@@ -154,8 +155,16 @@ public class FourEvalOperations {
                 }
             }
       if(trail != null)
-      simplified_bool = simplified_bool.concat(" + ");
+         simplified_bool = simplified_bool.concat(" + ");
+        
+   //+  +  + 
+          
+                 
       }
-     return simplified_bool;
+     
+        System.out.println(simplified_bool);
+      return simplified_bool;
+     
+     
     }
 }

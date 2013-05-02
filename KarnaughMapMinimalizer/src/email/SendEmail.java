@@ -1,10 +1,20 @@
 package email;
 
-import java.util.Properties;
 import javax.swing.JOptionPane;
 
+
+/**
+ * Simple class designed to Auto-Send Email, unfortunately Java SE doesn't support it. 
+ *
+ * @author Tomas Sykora, jr.
+ * @email jump@syky.cz
+ * 
+ */
 public class SendEmail {
 
+    /**
+     * Just Alert Frame, to let you know what is going on.
+     */
     public SendEmail() {
         
     JOptionPane.showMessageDialog(null,"Sorry, I know it's sad but JAVA SE does not support Java Mail API, so if you \n"

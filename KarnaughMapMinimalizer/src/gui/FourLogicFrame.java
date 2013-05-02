@@ -40,7 +40,7 @@ public class FourLogicFrame extends JInternalFrame {
     static final int xPosition = 30, yPosition = 30;
 
     public FourLogicFrame(int CounterJInternalFrame) {
-        super("Frame #" + CounterJInternalFrame + " ");
+        super("Frame #" + CounterJInternalFrame + " Logic Solver");
         this.setResizable(false);
         this.setClosable(true);
         this.setMaximizable(false);
@@ -177,6 +177,7 @@ public class FourLogicFrame extends JInternalFrame {
                 }
             }
         }
+        
 
         panel1.setBorder(new EmptyBorder(new Insets(0, 0, 0, 0)));
         add(panel1, BorderLayout.CENTER);

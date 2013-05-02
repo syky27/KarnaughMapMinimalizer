@@ -1,9 +1,6 @@
 package FourLogic;
 
-/**
- *
- * @author syky
- */
+
 public class FourEval extends FourEvalOperations{
     public int product[];
     public int nvar;

@@ -1,5 +1,4 @@
 package gui;
-import FourLogic.FourLogicFrame;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -36,9 +35,7 @@ public class  MyFrame extends JFrame{
     
     
     public MyFrame() {
-        //CleanMyFrame();
-
-        super("Karnagh Map Minimalizer");
+        super("Karnagh Map Minimalizer Designed by Tomas Sykora, jr.");
         // Make the main window positioned as 50 pixels from each edge of the
         // screen.
         int inset = 50;
@@ -66,9 +63,6 @@ public class  MyFrame extends JFrame{
         DrawMenu();
         repaint();
         
-	//setJMenuBar(createMenuBar());
-        //menubar.setMnemonic(KeyEvent.VK_N);
-	//menuItem.setMnemonic(KeyEvent.VK_N);
     }
 
     
@@ -80,17 +74,16 @@ public class  MyFrame extends JFrame{
         setJMenuBar(menubar);
         setLocationRelativeTo( null );
         menubar.add(file);
-        menubar.add(edit);
-        //menubar.add(notes);
+//        menubar.add(edit);
         menubar.add(about);
         
         
         file.add(fnc);
         file.add(exit);
         edit.add(history);
-        fnc.add(fnc3);
+        //fnc.add(fnc3);
         fnc.add(fnc4);
-        fnc.add(fnc5);
+        //fnc.add(fnc5);
         fnc.add(fnc6);
         about.add(author);
         about.add(license);

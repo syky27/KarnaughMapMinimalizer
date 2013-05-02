@@ -1,4 +1,4 @@
-package logic;
+package BackUp;
 
 import java.util.Hashtable;
 import karnaughmapminimalizer.KarnaughMapMinimalizer;

@@ -1,4 +1,4 @@
-package gui;
+package BackUp;
 
 import karnaughmapminimalizer.KarnaughMapMinimalizer;
 
@@ -19,7 +19,6 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import logic.FourFunction;
 
 public class FourFunctionFrame extends JInternalFrame {
     
