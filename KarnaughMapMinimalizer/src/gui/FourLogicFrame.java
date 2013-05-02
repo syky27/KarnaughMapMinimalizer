@@ -19,8 +19,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-
-
 /**
  *
  * @author syky
@@ -148,32 +146,32 @@ public class FourLogicFrame extends JInternalFrame {
             label[i].setBorder(LineBorder.createBlackLineBorder());
             label[i].addMouseListener(ml);
         }
-       
-        for(int i = 0, _x = 2, _inc = 3; i < 16; i++){
-            if(i < 8){
-                if(i % _x == 0 && i != 0){
+
+        for (int i = 0, _x = 2, _inc = 3; i < 16; i++) {
+            if (i < 8) {
+                if (i % _x == 0 && i != 0) {
                     panel1.add(label[i + 1]);
                     panel1.add(label[i]);
                     _x = 2 * _inc;
                     _inc += 2;
                     i++;
-                }else{
+                } else {
                     panel1.add(label[i]);
                 }
-            }else if(i >= 8 && i < 12){
-                if(i == 10){
+            } else if (i >= 8 && i < 12) {
+                if (i == 10) {
                     panel1.add(label[i + 5]); // switch column 14 15 <- 15 14
                     panel1.add(label[i + 4]); // observation regarding Gridlayout, I found something strange behaviour after adding 15 14 then add 15 result would be 14 15
                     i++;
-                }else{
+                } else {
                     panel1.add(label[i + 4]);
                 }
-            }else{
-                if(i == 14){
+            } else {
+                if (i == 14) {
                     panel1.add(label[i - 3]);
                     panel1.add(label[i - 4]);
                     i++;
-                }else{
+                } else {
                     panel1.add(label[i - 4]);
                     System.out.println("else " + i);
                 }
@@ -185,35 +183,109 @@ public class FourLogicFrame extends JInternalFrame {
         pack();
         setVisible(true);
     }
-    
+
     public class MouseHandler extends MouseAdapter {
+
         int i;
+
         @Override
         public void mouseClicked(MouseEvent e) {
-            for(i = 0; i < 16; i++){
-                if(e.getSource() == label[i]){
+            for (i = 0; i < 16; i++) {
+                if (e.getSource() == label[i]) {
                     break;
                 }
                 System.out.print("asdf" + label[i].getText());
             }
-            if(i != 16){
-                if(label[i].getText().equals("0")){
+            if (i != 16) {
+                if (label[i].getText().equals("0")) {
                     label[i].setText("1");
-                }else{
+                } else {
                     label[i].setText("0");
                 }
             }
 
             InitSet();
-            for (i = 0; i < 16; i++){
-                if(label[i].getText().equals("1")){
+            for (i = 0; i < 16; i++) {
+                if (label[i].getText().equals("1")) {
                     op.additem(set.get(2), qm_elements[i].product);
                     op.Qrec(set, 2);
                 }
             }
             p1_label.setText(op.CollectVar(set));
 
-            for(FourEval trav = set.get(2).next; trav != null; trav = trav.next){
+            String s = new String();
+            s = p1_label.getText();
+
+            System.out.println("");
+            System.out.println(s);
+
+            if ("  +  +  + ".equals(s)) {
+                s = "";
+
+            } else {
+                int index = 0;
+
+                while (s.charAt(index) == ' ' || s.charAt(index) == '+') {
+
+                    if (index - 1 == s.length()) {
+                        break;
+                    }
+                    index++;
+                }
+                s = s.substring(index);
+
+
+
+                index = s.length() - 1;
+
+                while (s.charAt(index) == ' ' || s.charAt(index) == '+') {
+
+                    if (index - 1 == s.length()) {
+                        break;
+                    }
+                    index--;
+                }
+
+
+                s = s.substring(0, index);
+
+
+
+                s = "( " + s + " )"; //Add ( and ) at the beginning and the end of boolean expresion
+
+                s = s.replaceAll(" \\+ ", ") or (");
+
+                if (s.contains(".")) {
+                    System.out.println("YES YES YES");
+
+                    s = s.replaceAll("\\.", " and ");
+                }
+
+                if (s.contains(")A")) {
+                    s = s.replaceAll("\\)A", ") and A");
+                }
+
+                if (s.contains(")B")) {
+                    s = s.replaceAll("\\)B", ") and B");
+                }
+
+                if (s.contains(")C")) {
+                    s = s.replaceAll("\\)C", ") and C");
+                }
+
+                if (s.contains(")D")) {
+                    s = s.replaceAll("\\)D", ") and D");
+                }
+
+
+
+            }
+
+            p1_label.setText(s);
+
+
+
+            for (FourEval trav = set.get(2).next; trav != null; trav = trav.next) {
                 System.out.print("sop::" + trav.product[0] + trav.product[1] + trav.product[2]);
             }
         }
