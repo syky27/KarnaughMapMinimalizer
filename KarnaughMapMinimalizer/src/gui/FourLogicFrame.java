@@ -4,6 +4,7 @@ import FourLogic.FourEval;
 import FourLogic.FourEvalOperations;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import static java.awt.Component.CENTER_ALIGNMENT;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
@@ -24,7 +25,7 @@ import javax.swing.border.LineBorder;
  *
  * @author syky
  */
-public class FourLogicFrame extends JInternalFrame {
+public class FourLogicFrame extends JInternalFrame implements Runnable{
 
     private JLabel[] label;
     private JPanel homepanel;
@@ -47,11 +48,19 @@ public class FourLogicFrame extends JInternalFrame {
         this.setMaximizable(false);
         this.setIconifiable(true);
 
-        setSize(640, 480);
+        setSize(800, 480);
 
         setLocation(xPosition * CounterJInternalFrame, yPosition * CounterJInternalFrame);
 
 
+        Thread FourLogicFrameThread = new Thread(this);
+        FourLogicFrameThread.start();
+        
+    }
+
+    @Override
+    public void run() {
+        
         op = new FourEvalOperations();
         GenerateSOP();
 
@@ -184,6 +193,7 @@ public class FourLogicFrame extends JInternalFrame {
         add(panel1, BorderLayout.CENTER);
         pack();
         setVisible(true);
+        
     }
 
     public class MouseHandler extends MouseAdapter {
