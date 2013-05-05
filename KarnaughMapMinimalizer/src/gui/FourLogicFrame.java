@@ -10,6 +10,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.TextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -98,7 +99,7 @@ public class FourLogicFrame extends JInternalFrame {
         //panel1.setBackground(Color.gray);
         panel1.setLayout(new GridLayout(4, 4));
         panel1.setPreferredSize(new Dimension(600, 300));
-        p1_label = new JLabel("Simplified Expression Here");
+        p1_label = new JLabel("Here is your simplified expresion in VHDL");
 
 
         panel3 = new JPanel();
@@ -212,10 +213,10 @@ public class FourLogicFrame extends JInternalFrame {
                     op.Qrec(set, 2);
                 }
             }
-            p1_label.setText(op.CollectVar(set));
+            //p1_label.setText(op.CollectVar(set));
 
             String s = new String();
-            s = p1_label.getText();
+            s = op.CollectVar(set);
 
             System.out.println("");
             System.out.println(s);
@@ -277,12 +278,19 @@ public class FourLogicFrame extends JInternalFrame {
                 if (s.contains(")D")) {
                     s = s.replaceAll("\\)D", ") and D");
                 }
+                
+                if (s.contains(")not")) {
+                    s = s.replaceAll("\\)not", ") and not");
+                }
 
 
 
             }
 
+            
             p1_label.setText(s);
+            
+            
 
 
 
