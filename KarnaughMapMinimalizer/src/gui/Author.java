@@ -27,13 +27,14 @@ public class Author extends JInternalFrame {
     static final int xPosition = 30, yPosition = 30;
     JButton emailButton = new JButton("Email me");
     JButton twitterButton = new JButton("Follow me");
+    JButton aboutButton = new JButton("about.me");
     JPanel bottomPanel = new JPanel();
     Border border = BorderFactory.createLineBorder(Color.BLACK);
 
-    JLabel infoLabel = new JLabel(  "<html><font size=+2>"
+    JLabel infoLabel = new JLabel(  "<html><div style=\\\"text-align: center;\\\"><font size=+2>"
                                     + "<b>Tomáš Sýkora, jr.</b><br>"
-                                    + "This program was created with goal to help Harware "
-                                    + "students on ČVUT FIT, I hope you guys will enjoy it"
+                                    + "This program was created with goal to eliminate stupid paperwork "
+                                    
                                     + "</html>");
     
 
@@ -41,7 +42,7 @@ public class Author extends JInternalFrame {
 
     
     public Author(int CounterJInternalFrame) {
-        super("IFrame #" + CounterJInternalFrame ,  
+        super("IFrame #" + CounterJInternalFrame + " About Author",  
                             false, // resizable
                             true, // closable
                             false, // maximizable
@@ -56,8 +57,10 @@ public class Author extends JInternalFrame {
     protected void initAuthor() {
         twitterButton.addActionListener(new TwitterAction());
         emailButton.addActionListener(new EmailAction());
+        aboutButton.addActionListener(new AboutAction());
         bottomPanel.add(emailButton);
         bottomPanel.add(twitterButton);
+        bottomPanel.add(aboutButton);
         infoLabel.setPreferredSize(new Dimension(500,400));
         infoLabel.setHorizontalTextPosition(JLabel.CENTER);
         infoLabel.setVerticalTextPosition(JLabel.CENTER);
@@ -86,6 +89,20 @@ public class Author extends JInternalFrame {
         public void actionPerformed(ActionEvent e) {
             try {
                 URL myURL = new URL("http://www.twitter.com/syky27");
+
+                openWebpage(myURL);
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(Author.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+    }
+    
+        static class AboutAction implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                URL myURL = new URL("http://about.me/Tomas.Sykora");
 
                 openWebpage(myURL);
             } catch (MalformedURLException ex) {
