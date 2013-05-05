@@ -75,6 +75,7 @@ public class MyFrame extends JFrame implements Runnable {
         exit.addActionListener(new ExitAction());
         author.addActionListener(new AuthorAction());
         fnc4.addActionListener(new Function4Action());
+        license.addActionListener(new LicenseAction());
     }
 
     public static void addJIn(JInternalFrame f) {
@@ -136,6 +137,29 @@ public class MyFrame extends JFrame implements Runnable {
             drawAuthor();
         }
     }
+    
+    
+    class LicenseAction implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            drawLicense();
+        }
+
+    }
+    
+    
+     protected void drawLicense() {
+        CounterJInternalFrame++;
+        License a = new License(CounterJInternalFrame);
+        a.setVisible(true);
+        jdpDesktop.add(a);
+        try {
+            a.setSelected(true);
+        } catch (java.beans.PropertyVetoException e) {
+        }
+    }
+    
 
     class Function4Action implements ActionListener {
 

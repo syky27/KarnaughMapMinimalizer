@@ -42,7 +42,7 @@ public class Author extends JInternalFrame {
 
     
     public Author(int CounterJInternalFrame) {
-        super("IFrame #" + CounterJInternalFrame + " About Author",  
+        super("Frame #" + CounterJInternalFrame + " About Author",  
                             false, // resizable
                             true, // closable
                             false, // maximizable
