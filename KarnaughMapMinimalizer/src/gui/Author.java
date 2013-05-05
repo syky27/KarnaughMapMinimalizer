@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 import email.SendEmail;
@@ -24,10 +21,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-/**
- *
- * @author syky
- */
+
 public class Author extends JInternalFrame {
 
     static final int xPosition = 30, yPosition = 30;
@@ -64,7 +58,6 @@ public class Author extends JInternalFrame {
         emailButton.addActionListener(new EmailAction());
         bottomPanel.add(emailButton);
         bottomPanel.add(twitterButton);
-        //infoLabel.setBorder(border);
         infoLabel.setPreferredSize(new Dimension(500,400));
         infoLabel.setHorizontalTextPosition(JLabel.CENTER);
         infoLabel.setVerticalTextPosition(JLabel.CENTER);
