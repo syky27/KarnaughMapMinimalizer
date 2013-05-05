@@ -3,7 +3,7 @@ KarnaughMapMinimalizer
 
 This is a Karnaugh Map Minimalizer, which offers boolean minimalization for four logic functions by now. There are some ideas to expand this project by adding more minimalization options and also implments not cares values.
 
-![Minimalized boolean expresion](https://github.com/syky27/KarnaughMapMinimalizer/blob/master/screenshot.png)
+![Minimalized boolean expresion](https://raw.github.com/syky27/KarnaughMapMinimalizer/master/screenshot.png)
 
 Compile
 -------
