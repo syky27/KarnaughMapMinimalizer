@@ -1,8 +1,3 @@
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-/KarnaughMapMinimalizer/nbproject/private/
-/KarnaughMapMinimalizer/dist/
+*/build
+*/dist
+*/nbproject/private
