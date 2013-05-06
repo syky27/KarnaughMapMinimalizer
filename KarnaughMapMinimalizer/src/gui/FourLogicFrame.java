@@ -48,7 +48,6 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         this.setMaximizable(false);
         this.setIconifiable(true);
 
-        setSize(800, 480);
 
         setLocation(xPosition * CounterJInternalFrame, yPosition * CounterJInternalFrame);
 
@@ -107,8 +106,10 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         panel1 = new JPanel();
         //panel1.setBackground(Color.gray);
         panel1.setLayout(new GridLayout(4, 4));
-        panel1.setPreferredSize(new Dimension(600, 300));
+        panel1.setPreferredSize(new Dimension(900, 300));
         p1_label = new JLabel("Here is your simplified expresion in VHDL");
+
+        p1_label.setFont(new Font(panel1.getFont().getFontName(), p1_label.getFont().getStyle(), p1_label.getFont().getSize() - 2));
 
 
         panel3 = new JPanel();
@@ -299,6 +300,7 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
 
             
             p1_label.setText(s);
+            
             
             
 
