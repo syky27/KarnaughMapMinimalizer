@@ -21,7 +21,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
-
 public class Author extends JInternalFrame {
 
     static final int xPosition = 30, yPosition = 30;

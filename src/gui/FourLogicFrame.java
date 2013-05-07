@@ -74,16 +74,16 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.fill = GridBagConstraints.HORIZONTAL;
         label2 = new JLabel();
-        JLabel w = new JLabel("CD  00");
+        JLabel w = new JLabel("CD          00");
 
         w.setFont(new Font("A", Font.BOLD, 30));
-        JLabel u = new JLabel("      01");
+        JLabel u = new JLabel("            01");
 
         u.setFont(new Font("A", Font.BOLD, 32));
-        JLabel y = new JLabel("      11");
+        JLabel y = new JLabel("            11");
 
         y.setFont(new Font("A", Font.BOLD, 32));
-        JLabel z = new JLabel("      10");
+        JLabel z = new JLabel("            10");
 
         z.setFont(new Font("A", Font.BOLD, 32));
         panel2.setBorder(new EmptyBorder(new Insets(0, 0, 0, 0)));
@@ -184,7 +184,6 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
                     i++;
                 } else {
                     panel1.add(label[i - 4]);
-                    System.out.println("else " + i);
                 }
             }
         }
@@ -207,7 +206,6 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
                 if (e.getSource() == label[i]) {
                     break;
                 }
-                System.out.print("asdf" + label[i].getText());
             }
             if (i != 16) {
                 if (label[i].getText().equals("0")) {
@@ -228,9 +226,6 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
 
             String s = new String();
             s = op.CollectVar(set);
-
-            System.out.println("");
-            System.out.println(s);
 
             if ("  +  +  + ".equals(s)) {
                 s = "";
@@ -269,7 +264,6 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
                 s = s.replaceAll(" \\+ ", ") or (");
 
                 if (s.contains(".")) {
-                    System.out.println("YES YES YES");
 
                     s = s.replaceAll("\\.", " and ");
                 }
@@ -293,6 +287,8 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
                 if (s.contains(")not")) {
                     s = s.replaceAll("\\)not", ") and not");
                 }
+                
+                
 
 
 
@@ -306,9 +302,7 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
 
 
 
-            for (FourEval trav = set.get(2).next; trav != null; trav = trav.next) {
-                System.out.print("sop::" + trav.product[0] + trav.product[1] + trav.product[2]);
-            }
+           
         }
     }
 
@@ -322,9 +316,7 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
                 left /= 2;
             }
             for (j = 0; j < 4; ++j) {
-                System.out.print(qm_elements[i].product[j]);
             }
-            System.out.println("");
         }
     }
 
