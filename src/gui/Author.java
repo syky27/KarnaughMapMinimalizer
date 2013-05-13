@@ -21,6 +21,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
 
+/**
+ *
+ * Author JInternalFrame gives information about author
+ * 
+ * @author syky
+ */
 public class Author extends JInternalFrame {
 
     static final int xPosition = 30, yPosition = 30;
@@ -40,6 +46,12 @@ public class Author extends JInternalFrame {
     
 
     
+    /**
+     *
+     * Makes Author object
+     * 
+     * @param CounterJInternalFrame, takes control of placing the new frame shifted so you can see bit of the earlier frame
+     */
     public Author(int CounterJInternalFrame) {
         super("Frame #" + CounterJInternalFrame + " About Author",  
                             false, // resizable
@@ -53,6 +65,9 @@ public class Author extends JInternalFrame {
 
     }
 
+    /**
+     * This is just helping method called in constructor
+     */
     protected void initAuthor() {
         twitterButton.addActionListener(new TwitterAction());
         emailButton.addActionListener(new EmailAction());
@@ -111,6 +126,11 @@ public class Author extends JInternalFrame {
         }
     }
 
+    /**
+     * Helps open webpage
+     * 
+     * @param uri, takes URI, makes it work in browser
+     */
     public static void openWebpage(URI uri) {
         Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
         if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
@@ -122,6 +142,11 @@ public class Author extends JInternalFrame {
         }
     }
 
+    /**
+     * Opening URL
+     * 
+     * @param url, opening this URL in default browse
+     */
     public static void openWebpage(URL url) {
         try {
             openWebpage(url.toURI());

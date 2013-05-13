@@ -4,6 +4,10 @@ import java.awt.Dimension;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 
+/**
+ * Class designed to handle License JInternalFrame
+ * @author syky
+ */
 public class License extends JInternalFrame {
 
     static final int xPosition = 30, yPosition = 30;
@@ -21,6 +25,11 @@ public class License extends JInternalFrame {
             + "THE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."
             + "</html>");
 
+    /**
+     * Constructor to create License JInteralFrame window
+     * 
+     * @param CounterJInternalFrame, takes control of placing the new frame shifted so you can see bit of the earlier frame
+     */
     public License(int CounterJInternalFrame) {
         super("Frame #" + CounterJInternalFrame + " License",
                 false, // resizable
@@ -34,6 +43,11 @@ public class License extends JInternalFrame {
 
     }
 
+    /**
+     *
+     * Just help function to draw Author window
+     * 
+     */
     protected void initAuthor() {
 
         infoLabel.setPreferredSize(new Dimension(500, 400));

@@ -11,6 +11,12 @@ import javax.swing.JFrame;
 import java.awt.event.*;
 import java.awt.*;
 
+/**
+ *
+ * This class represents the main frame in program, it also runs it in new thread
+ * 
+ * @author syky
+ */
 public class MyFrame extends JFrame implements Runnable {
 
     public static int CounterJInternalFrame = 0;
@@ -27,6 +33,10 @@ public class MyFrame extends JFrame implements Runnable {
     private JMenuItem fnc6 = new JMenuItem("May be continued...");
     private JMenuItem history = new JMenuItem("History");
 
+    /**
+     * Constructor for MyFrame, building new object and runs new threads
+     * 
+     */
     public MyFrame() {
         super("Karnagh Map Minimalizer Designed by Tomas Sykora, jr.");
 
@@ -53,6 +63,11 @@ public class MyFrame extends JFrame implements Runnable {
 
     }
 
+    /**
+     *
+     * DrawMenu is designed for drawing the top menu
+     * 
+     */
     public void DrawMenu() {
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -78,10 +93,13 @@ public class MyFrame extends JFrame implements Runnable {
         license.addActionListener(new LicenseAction());
     }
 
-    public static void addJIn(JInternalFrame f) {
-        jdpDesktop.add(f);
-    }
+  
 
+    /**
+     * 
+     * drawFourFunction gives you JInternalFrame with gui to manage your boolean expression 
+     * 
+     */
     protected void drawFourFunction() {
         CounterJInternalFrame++;
         FourLogicFrame ff = new FourLogicFrame(CounterJInternalFrame);
@@ -95,6 +113,11 @@ public class MyFrame extends JFrame implements Runnable {
         }
     }
 
+    /**
+     *
+     * drawAuthor draws JInternalFrame containing info about Author
+     * 
+     */
     protected void drawAuthor() {
         CounterJInternalFrame++;
         Author a = new Author(CounterJInternalFrame);
@@ -106,6 +129,10 @@ public class MyFrame extends JFrame implements Runnable {
         }
     }
 
+    /**
+     * Overriding method run inherited from class Runnable to run new thread
+     * 
+     */
     @Override
     public void run() {
 
@@ -121,7 +148,11 @@ public class MyFrame extends JFrame implements Runnable {
 
 
     }
-
+    /**
+     * 
+     * Makes the application to close and kill all the threads
+     * 
+     */
     static class ExitAction implements ActionListener {
 
         @Override
@@ -129,7 +160,11 @@ public class MyFrame extends JFrame implements Runnable {
             System.exit(0);
         }
     }
-
+    /**
+     * 
+     * Handling menu item Author
+     * 
+     */
     class AuthorAction implements ActionListener {
 
         @Override
@@ -138,7 +173,11 @@ public class MyFrame extends JFrame implements Runnable {
         }
     }
     
-    
+     /**
+     * 
+     * Handling menu item License
+     * 
+     */
     class LicenseAction implements ActionListener {
 
         @Override
@@ -149,7 +188,10 @@ public class MyFrame extends JFrame implements Runnable {
     }
     
     
-     protected void drawLicense() {
+     /**
+     * Draws license JInternalFrame
+     */
+    protected void drawLicense() {
         CounterJInternalFrame++;
         License a = new License(CounterJInternalFrame);
         a.setVisible(true);
@@ -160,7 +202,11 @@ public class MyFrame extends JFrame implements Runnable {
         }
     }
     
-
+     /**
+     * 
+     * drawFourFunction gives you JInternalFrame with gui to manage your boolean expression, when menu item is pressed
+     * 
+     */
     class Function4Action implements ActionListener {
 
         @Override

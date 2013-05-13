@@ -2,8 +2,18 @@ package FourLogic;
 
 import java.util.ArrayList;
 
+/**
+ * Class where all the logic is written
+ * 
+ * @author syky
+ */
 public class FourEvalOperations {
 
+    /**
+     * Adding product to list
+     * @param list, takes product
+     * @param product, store it in list
+     */
     public void additem(FourEval list, int product[]) {
         FourEval elem = new FourEval();
         while (list.next != null) {
@@ -14,6 +24,14 @@ public class FourEvalOperations {
         list.next = elem;
     }
 
+    /**
+     * Compare the logic binary representation
+     * 
+     * @param product1, left side of comparation
+     * @param product2, right side of comparation
+     * @param nvar, maximum value in for cycle
+     * @return boolean
+     */
     public boolean equal(int product1[], int product2[], int nvar) {
         for (int i = 0; i < nvar; i++) {
             if (product1[i] != product2[i]) {
@@ -23,6 +41,14 @@ public class FourEvalOperations {
         return true;
     }
 
+    /**
+     *
+     * Check is the value already exists
+     * 
+     * @param item1, checking this value with ${item2}
+     * @param item2
+     * @return size of memory
+     */
     public boolean complementary(FourEval item1, FourEval item2) {
         int sum, i;
         for (i = sum = 0; i < item1.nvar; i++) {
@@ -33,6 +59,11 @@ public class FourEvalOperations {
         return (sum == 1);
     }
 
+    /**
+     * Deleting ${item}, from ${list} 
+     * @param list, deleting item from here
+     * @param item, deletes this item
+     */
     public void deleteitem(FourEval list, FourEval item) {
         while (list.next != item) {
             list = list.next;
@@ -44,6 +75,13 @@ public class FourEvalOperations {
         }
     }
 
+    /**
+     *
+     *  Makes the magic happen
+     * 
+     * @param set, memory where the expressions are stored
+     * @param index, helps navigate thought ${set} 
+     */
     public void Qrec(ArrayList<FourEval> set, int index) {
         FourEval item1, item2, trav;
         boolean exist;
@@ -90,6 +128,13 @@ public class FourEvalOperations {
         Qrec(set, index - 1);
     }
 
+    /**
+     *
+     * Giving output
+     * 
+     * @param set, takes the value from here
+     * @return returns string with solved expression
+     */
     public String CollectVar(ArrayList<FourEval> set) {
         String var[] = {"A", "B", "C", "D", "\0"};
         FourEval trail = new FourEval();

@@ -23,6 +23,7 @@ import javax.swing.border.LineBorder;
 
 /**
  *
+ * Class to which object is frame with minimalization gui
  * @author syky
  */
 public class FourLogicFrame extends JInternalFrame implements Runnable{
@@ -41,6 +42,11 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
     private int x, inc;
     static final int xPosition = 30, yPosition = 30;
 
+    /**
+     * Creating new FourlogicFrame
+     * 
+     * @param CounterJInternalFrame, takes control of placing the new frame shifted so you can see bit of the earlier frame
+     */
     public FourLogicFrame(int CounterJInternalFrame) {
         super("Frame #" + CounterJInternalFrame + " Logic Solver");
         this.setResizable(false);
@@ -56,7 +62,11 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         FourLogicFrameThread.start();
         
     }
-
+    /**
+     * Overriding method run inherited from class Runnable to run new thread
+     * 
+     * 
+     */
     @Override
     public void run() {
         
@@ -196,6 +206,11 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         
     }
 
+    /**
+     *
+     * Changing text label when the mouse button is triggered
+     * 
+     */
     public class MouseHandler extends MouseAdapter {
 
         int i;
@@ -306,6 +321,11 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         }
     }
 
+    /**
+     *
+     * Evaluating the expression
+     * 
+     */
     public void GenerateSOP() {
         qm_elements = new FourEval[16];
         int left, j;
@@ -320,6 +340,11 @@ public class FourLogicFrame extends JInternalFrame implements Runnable{
         }
     }
 
+    /**
+     *
+     * Initialization of memory
+     * 
+     */
     public void InitSet() {
         set = new ArrayList<FourEval>();
         for (int i = 0; i < 3; i++) {
