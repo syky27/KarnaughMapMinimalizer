@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Class where all the logic is written
  * 
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class FourEvalOperations {
 
@@ -45,8 +45,8 @@ public class FourEvalOperations {
      *
      * Check is the value already exists
      * 
-     * @param item1, checking this value with ${item2}
-     * @param item2
+     * @param item1, checking this value with item2
+     * @param item2, checking this value with item1
      * @return size of memory
      */
     public boolean complementary(FourEval item1, FourEval item2) {
@@ -77,10 +77,10 @@ public class FourEvalOperations {
 
     /**
      *
-     *  Makes the magic happen
+     *  Qrec equals the logic boolean expression
      * 
      * @param set, memory where the expressions are stored
-     * @param index, helps navigate thought ${set} 
+     * @param index, helps navigate thought set 
      */
     public void Qrec(ArrayList<FourEval> set, int index) {
         FourEval item1, item2, trav;

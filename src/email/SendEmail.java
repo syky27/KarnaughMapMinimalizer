@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 /**
  * Simple class designed to Auto-Send Email, unfortunately Java SE doesn't support it. 
  *
- * @author syky
+ * @author Tomas Sykora, jr
  * 
  * 
  */

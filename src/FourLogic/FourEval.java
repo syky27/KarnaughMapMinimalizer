@@ -3,7 +3,7 @@ package FourLogic;
 
 /**
  * This is class for storing logic operands its extending the operations
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class FourEval extends FourEvalOperations{
     public int product[];

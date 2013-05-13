@@ -24,7 +24,7 @@ import javax.swing.border.LineBorder;
 /**
  *
  * Class to which object is frame with minimalization gui
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class FourLogicFrame extends JInternalFrame implements Runnable{
 

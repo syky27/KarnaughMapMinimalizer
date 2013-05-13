@@ -6,7 +6,7 @@ import javax.swing.JLabel;
 
 /**
  * Class designed to handle License JInternalFrame
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class License extends JInternalFrame {
 

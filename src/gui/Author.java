@@ -25,7 +25,7 @@ import javax.swing.border.Border;
  *
  * Author JInternalFrame gives information about author
  * 
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class Author extends JInternalFrame {
 
@@ -111,7 +111,6 @@ public class Author extends JInternalFrame {
 
         }
     }
-    
         static class AboutAction implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {

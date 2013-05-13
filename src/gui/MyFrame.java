@@ -14,8 +14,7 @@ import java.awt.*;
 /**
  *
  * This class represents the main frame in program, it also runs it in new thread
- * 
- * @author syky
+ * @author Tomas Sykora, jr
  */
 public class MyFrame extends JFrame implements Runnable {
 
